@@ -5,6 +5,9 @@ FROM java:8
 MAINTAINER me@nalbam.com
 
 ENV JENKINS_REMOTING_VERSION 3.18
+
+ENV JENKINS_URL "http://jenkins"
+
 ENV HOME /home/jenkins
 
 RUN useradd -c "Jenkins User" -d ${HOME} -m jenkins
