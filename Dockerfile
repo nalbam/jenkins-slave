@@ -18,7 +18,8 @@ RUN apt-get update && \
 RUN curl --create-dirs -sSLo /usr/share/jenkins/remoting-$VERSION.jar \
     http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/$VERSION/remoting-$VERSION.jar
 
-COPY jenkins-slave.sh /usr/local/bin/jenkins-slave.sh
+COPY jenkins-slave.sh /usr/local/bin/jenkins-slave.sh && \
+     chmod +x /usr/local/bin/jenkins-slave.sh
 
 USER ${USER}
 
