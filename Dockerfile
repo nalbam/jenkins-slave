@@ -19,8 +19,8 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/remoting-$JENKINS_REMOTING_VERSI
 
 COPY jenkins-slave.sh /usr/local/bin/jenkins-slave.sh
 
-VOLUME ${HOME}
-
 USER ${USER}
+
+VOLUME ${HOME}
 
 ENTRYPOINT ["/usr/local/bin/jenkins-slave.sh"]
