@@ -15,7 +15,7 @@ RUN apt-get update && \
     useradd -c "Jenkins User" -d ${HOME} -m ${USER} && \
     usermod -aG docker ${USER}
 
-RUN curl --create-dirs -sSLo /usr/share/jenkins/remoting-$VERSION.jar \
+RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar \
     http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/$VERSION/remoting-$VERSION.jar
 
 COPY jenkins-slave.sh /usr/local/bin/jenkins-slave.sh
