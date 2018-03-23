@@ -4,10 +4,11 @@ FROM openjdk:8-jdk
 
 MAINTAINER me@nalbam.com
 
-ENV VERSION 3.19
-
 ENV USER jenkins
 ENV HOME /home/${USER}
+
+ARG VERSION=3.19
+ARG AGENT_WORKDIR=${HOME}/agent
 
 RUN apt-get update && \
     apt-get install -y docker && \
@@ -25,7 +26,7 @@ COPY jenkins-slave /usr/local/bin/jenkins-slave
 
 USER ${USER}
 
-ENV AGENT_WORKDIR=${HOME}/agent
+ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 
 RUN mkdir -p ${HOME}/.jenkins && \
     mkdir -p ${HOME}/agent
