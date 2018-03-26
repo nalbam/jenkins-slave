@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM openjdk:8-jdk
+FROM openjdk:8-jdk-alpine
 
 MAINTAINER me@nalbam.com
 
@@ -11,11 +11,9 @@ ARG VERSION=3.19
 ARG AGENT_WORKDIR=${HOME}/agent
 
 RUN apt-get update && \
-    apt-get install -y docker && \
-    groupadd -g 10000 ${USER} && \
-    useradd -c "Jenkins User" -d ${HOME} -u 10000 -g 10000 -m ${USER} && \
-    groupadd docker && \
-    usermod -aG docker ${USER}
+    apt-get install -y curl bash git docker && \
+    addgroup -S -g 10000 ${USER} && \
+    adduser -S -u 10000 -h $${HOME} -G ${USER} ${USER}
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar \
     https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar && \
