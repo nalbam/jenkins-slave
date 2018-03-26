@@ -11,7 +11,7 @@ ARG VERSION=3.19
 ARG AGENT_WORKDIR=${HOME}/agent
 
 RUN apt-get update && \
-    apt-get install -y docker && \
+    apt-get install -y curl docker && \
     groupadd -g 10000 ${USER} && \
     useradd -c "Jenkins User" -d ${HOME} -u 10000 -g 10000 -m ${USER} && \
     groupadd docker && \
