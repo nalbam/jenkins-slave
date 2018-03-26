@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM openjdk:8-jdk
+FROM openjdk:8-slim
 
 MAINTAINER me@nalbam.com
 
