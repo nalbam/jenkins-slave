@@ -4,7 +4,10 @@ Jenkins JNLP Agent Docker image with Docker
 
 ## Usage
 ```
-docker run nalbam/jenkins-slave -url http://jenkins-server:port <secret> <agent name>
+sudo docker pull nalbam/jnlp-slave:latest (123MB)
+sudo docker pull nalbam/jnlp-slave:alpine (62MB)
+
+docker run nalbam/jnlp-slave -url http://jenkins-master:port <secret> <agent name>
 ```
 
 ## registry
