@@ -29,9 +29,13 @@ USER ${USER}
 
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 
-RUN mkdir -p ${HOME}/.jenkins && \
+RUN mkdir -p ${HOME}/.m2 && \
+    mkdir -p ${HOME}/.gradle && \
+    mkdir -p ${HOME}/.jenkins && \
     mkdir -p ${HOME}/agent
 
+VOLUME ${HOME}/.m2
+VOLUME ${HOME}/.gradle
 VOLUME ${HOME}/.jenkins
 VOLUME ${HOME}/agent
 
