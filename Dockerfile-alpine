@@ -4,5 +4,5 @@ FROM jenkins/jnlp-slave:alpine
 
 MAINTAINER me@nalbam.com
 
-RUN apt update && \
-    apt install -y curl docker golang
+RUN sudo apt update && \
+    sudo apt install -y curl docker golang
