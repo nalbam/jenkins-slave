@@ -17,12 +17,13 @@ RUN apt-get update && \
     groupadd docker && \
     usermod -aG docker ${USER}
 
+COPY jenkins-slave /usr/local/bin/jenkins-slave
+
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar \
     https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar && \
     chmod 755 /usr/share/jenkins && \
-    chmod 644 /usr/share/jenkins/slave.jar
-
-COPY jenkins-slave /usr/local/bin/jenkins-slave
+    chmod 644 /usr/share/jenkins/slave.jar && \
+    chmod 755 /usr/local/bin/jenkins-slave
 
 USER ${USER}
 
