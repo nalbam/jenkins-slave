@@ -1,4 +1,4 @@
-# jenkins-slave
+# jnlp-slave
 
 Jenkins JNLP Agent Docker image with Docker
 
