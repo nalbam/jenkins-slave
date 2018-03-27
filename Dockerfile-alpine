@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM jenkins/jnlp-slave:latest
+FROM jenkins/jnlp-slave:alpine
 
 MAINTAINER me@nalbam.com
 
