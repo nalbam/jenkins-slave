@@ -15,5 +15,6 @@ docker run nalbam/jnlp-slave -url http://jenkins-master:port <secret> <agent nam
  * https://hub.docker.com/r/jenkins/jnlp-slave/
 
 ## source
+ * https://github.com/docker-library/openjdk
  * https://github.com/jenkinsci/docker-slave
  * https://github.com/jenkinsci/docker-jnlp-slave
