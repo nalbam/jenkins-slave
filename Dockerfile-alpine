@@ -13,6 +13,7 @@ RUN apt-get update && \
     apt-get install -y curl docker
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
+COPY extra/settings.xml ${HOME}/.m2/settings.xml
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar \
     https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar && \
