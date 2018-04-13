@@ -4,4 +4,4 @@ FROM jenkins/jnlp-slave:latest
 
 MAINTAINER me@nalbam.com
 
-RUN ln -s /var/jenkins_home/.m2 /home/jenkins/.m2
+RUN ln -s /home/jenkins/jenkins_home/.m2 /home/jenkins/.m2
