@@ -4,7 +4,4 @@ FROM jenkins/jnlp-slave:latest
 
 MAINTAINER me@nalbam.com
 
-USER root
-
-RUN apt update && \
-    apt install -y curl docker
+RUN ln -s /var/jenkins_home/.m2 /home/jenkins/.m2
