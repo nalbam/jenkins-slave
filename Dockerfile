@@ -2,6 +2,5 @@
 
 FROM jenkins/jnlp-slave:latest
 
-MAINTAINER me@nalbam.com
-
-RUN ln -s /home/jenkins/jenkins_home/.m2/settings.xml /home/jenkins/.m2/settings.xml
+ENV TZ=Asia/Seoul
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
